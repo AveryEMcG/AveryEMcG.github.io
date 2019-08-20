@@ -1,0 +1,153 @@
+html {
+	font-family: Lato;
+}
+
+hr {
+	color: #eee;
+	width: 90%;
+}
+
+.title {
+	font-family: monospace;
+	font-size: 250%;
+	top: -25px;
+	left: 10px;
+	width: 100%;
+	border-bottom: 5px solid black;
+}
+
+.container {
+	margin-top:2%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75em;
+}
+
+@media only screen 
+and (max-device-width: 51em) {
+	.container {
+		margin-left: 2em;
+		margin-right: 2em;
+		width: auto;
+	}
+}
+
+.content {
+	font-size: 120%
+}
+
+.footnotes {
+	font-size: 75%;
+}
+
+.footnote-ref {
+	font-size: 75%;
+}
+
+.mono {
+	font-family: monospace;
+}
+
+.footer {
+	text-align: center;
+	font-family: monospace;
+}
+
+
+canvas#canvas {}
+
+.pico8_el {
+	box-sizing:border-box;
+	float:center;
+	width:19.3%;
+	display:inline-block;
+	padding:4px;
+	text-align:center;
+	color:#FFF1E8;
+	background-color:#83769c;
+	font-family:verdana;
+	font-size:11px;
+	cursor:pointer;
+	cursor:hand;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	vertical-align:middle;
+}
+
+.pico8_el:hover{
+	background-color:#FF77A8;
+}
+
+.center{
+	text-align:center;
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	margin:0 0;
+	border:0px;
+}
+
+.plate{
+	visibility:hidden; /*for graceful loading*/
+	background-color:#000;
+	border:4px solid #000;
+	box-sizing:content-box;
+
+	-webkit-user-select:none; /* Chrome, Opera, Safari */
+	-moz-user-select:none; /* Firefox 2+ */
+	-ms-user-select:none; /* IE 10+ */
+	user-select:none; /* Standard syntax */
+	user-drag:none;
+	-webkit-user-drag:none;
+}
+
+canvas{
+	cursor:none;
+	outline:none;
+}
+
+.menubar{
+	box-sizing:border-box;
+	background-color:#000;
+    border-style:solid;
+    border-width:4px 0px 0px 0px;
+	border-color:#000;
+	visibility:hidden;
+
+	display:flex;
+    align-items:stretch;
+    justify-content:space-between;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.startbutton{
+
+	width:96px; height:96px;
+	cursor:pointer;
+	cursor:hand;
+	position:absolute;
+	left:45%;
+	top:45%;
+}
+
+.pixels{
+	image-rendering:optimizeSpeed;
+	image-rendering:-moz-crisp-edges;
+	image-rendering:-webkit-optimize-contrast;
+	image-rendering:optimize-contrast;
+	image-rendering:pixelated;
+	-ms-interpolation-mode:nearest-neighbor;
+}
