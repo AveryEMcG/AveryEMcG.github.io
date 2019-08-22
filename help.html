@@ -1,4 +1,6 @@
 <!doctype html>
+<!-- To whoever reads this. I didn't maximize this for code quality, or organization. At some point in the future I will. I made this on-the-fly as a tool for me / some folks I know in NYC. This isn't by any means production code :D <3 -->
+
 <html lang="en">
   <head>
     <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
@@ -86,7 +88,7 @@
       <div id="popup-content"></div>
     </div>
     <div class ="details">
-    Water fountains - <span style="color:blue"><b>blue dots</b></span>, Bathrooms (not gender neutral) - <span style="color:black"><b>black dots </b></span>, Bathrooms (gender neutral) - <span style="color:red"><b>red dots </b></span>
+    Water fountains - <span style="color:blue"><b>blue dots</b></span>, Bathrooms (not gender neutral) - <span style="color:red"><b>red dots </b></span>, Bathrooms (gender neutral) - <b>white dots </b>
     <i><br>Note: This is living work and is still very much in progress. Please bear with me <3. </i></3.>
     </div>
     <script type="text/javascript">
@@ -126,40 +128,40 @@ var unisex_bathroom=
   });
   
 var image = new ol.style.Circle({
-    radius: 5,
+    radius: 10,
     fill: new ol.style.Fill({
         color: 'rgba(0,0,255,1)'
     }),
     stroke: new ol.style.Stroke(
-        {color: 'grey', 
-        width: 0.5, 
+        {color: 'black', 
+        width: 3, 
         })
   }); 
   
   
   pointstyle =  new ol.style.Style({image: image})
 
-var blackpoint = new ol.style.Circle({
-    radius: 5,
+var whitepoint = new ol.style.Circle({
+    radius: 10,
     fill: new ol.style.Fill({
-        color: 'rgba(0,0,0,1)'
+        color: 'rgba(255,255,255,1)'
     }),
     stroke: new ol.style.Stroke(
-        {color: 'grey', 
-        width: 0.5, 
+        {color: 'black', 
+        width: 3, 
         })
   }); 
   var redpoint = new ol.style.Circle({
-    radius: 5,
+    radius: 10,
     fill: new ol.style.Fill({
         color: 'rgba(255,0,0,1)'
     }),
     stroke: new ol.style.Stroke(
-        {color: 'grey', 
-        width: 0.5, 
+        {color: 'black', 
+        width: 3, 
         })
   }); 
-  blackpointstyle =  new ol.style.Style({image: blackpoint})
+  whitepointstyle =  new ol.style.Style({image: whitepoint})
   redpointstyle= new ol.style.Style({image: redpoint})
   style =  new ol.style.Style({
                 stroke: new ol.style.Stroke({
@@ -182,12 +184,12 @@ var blackpoint = new ol.style.Circle({
     bathroomlayer = new ol.layer.Vector(
         {
          source: bathsource,
-         style: blackpointstyle
+         style: redpointstyle
        });
     unibathroomlayer = new ol.layer.Vector(
         {
          source: unibathroom_source,
-         style: redpointstyle
+         style: whitepointstyle
        });
        
 
@@ -227,7 +229,7 @@ var blackpoint = new ol.style.Circle({
         layers: [
           new ol.layer.Tile({
             source: new ol.source.OSM()
-          }),bathroomlayer,unibathroomlayer,fountainlayer
+          }), bathroomlayer,fountainlayer,unibathroomlayer,
          ],
         overlays: [overlay],
         view: new ol.View({
