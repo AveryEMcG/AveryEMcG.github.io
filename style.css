@@ -3,8 +3,18 @@ html {
 }
 
 hr {
+	border: none;
 	color: #eee;
-	width: 90%;
+	width: 95%;
+	margin-top:5%;
+	margin-bottom:5%;
+
+	margin-left:5%;
+	margin-right:0%;
+	height:5px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
 }
 
 .title {
@@ -18,8 +28,6 @@ hr {
 
 .container {
 	margin-top:2%;
-	margin-left: auto;
-	margin-right: auto;
 	width: 75em;
 }
 
@@ -33,7 +41,10 @@ and (max-device-width: 51em) {
 }
 
 .content {
-	font-size: 120%
+/*font-size: 120%;*/
+	margin-left: 5%;
+	margin-right: 20%;
+	max-width:75%
 }
 
 .footnotes {
@@ -150,4 +161,27 @@ canvas{
 	image-rendering:optimize-contrast;
 	image-rendering:pixelated;
 	-ms-interpolation-mode:nearest-neighbor;
+}
+
+.rightImage{
+	float: right; 
+	width:20%;
+	margin-top:10%;
+	height:100%;
+}
+
+.pico8Image{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pico8Image{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.mainpageimage{
+	width:10%;
+	margin:2%;
+
 }
