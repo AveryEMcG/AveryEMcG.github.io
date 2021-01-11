@@ -1,0 +1,89 @@
+<html>
+<link rel="stylesheet" href="style.css">
+<title>Halting Solution</title>
+
+
+<h1 class="title"><a href="index.html" style="color: black; text-decoration: none; ">Halting Solution</a></h1>
+<div class="navigation">
+<div class="leftnavigation mono"><a href="gameboytutorial_visuals.html">Previous lesson:<br><-- overview of visuals </a></div>
+</div>
+<div class ="container">
+    <div class="content mono">
+            <h2>Lesson 2: Bits to sprites: Data Encoding</h2>
+            <div style="padding-left:2%">
+                <br><br>
+                Let's look at a typical example of a gameboy sprite - this little guy is from pokemon:
+                <img src="img/pokemon.png" class="pico8Image" alt="an image of of the pokemon 'clefairy' from pokemon.'">
+                If we look in memory, the data which represents that pokemon might look like this:
+                <img src="img/hex_sprite.png" class="pico8Image" alt="a bunch of letters and numbers arranged into a grid'">
+                Pretty confusing right? Let's take this step by step and show how this all works.<br><br>
+
+                We can look at our sprite like a grid of pixels, where it has an X and a Y coordinate:
+                <img src="img/pokemon_grid.png" class="pico8Image" alt="the previous image of a pokemon sprite, with a grid displayed on top">
+                Now we can take the colors the gameboy is capable of displaying, and give them numbers to identify them (just like how paint by numbers works!).
+                <img src="img/color_map.png" class="pico8Image" alt="4 shades of grey, with the numbers 0-3 above them">               
+                Now, let's fill in that grid with the numbers corresponding with the colors of the sprite:
+                <img src="img/pokemon_with_colors.png" class="pico8Image" alt="the image from before with the pokemon sprite with the grid on top, but now with the numbers corresponding to the colors filled in"> 
+                There's no longer a need to show the grid or the sprite, so let's drop them away. We can see there is now just a grid of 0's and 1's. For every 1 there is a transistor with electricity in it, and one without charge for every 0. This is what the gameboy has in memory.
+                <img src="img/binary_pokemon.png" class="pico8Image" alt="a grid of 0's and 1's corresponding to the grid of numbers before, you can almost see an outline of the sprite in the numbers if you look closely."> 
+                But how did we end up with a grid of letters and numbers before? If the transistors only stores 0's and 1's, and that's all the gameboy can read, why would we have letters?<br><br>
+                Those letters are a kind of number encoding called "hexadecimal". There are 3 main systems of numbers that programmers care about: decimal (the base 10 system of counting we use every day), binary (the base 2 system of 0's and 1's that transistors use), and hexidecimal (a base 16 system that can be used to play some tricks in math with binary).
+                <br><br>
+                Let's count to 20, 31, and 3 in each of these number systems:
+                <br><br>
+                <div style="padding-left:5%">
+                <b><u>Decimal (Deca means 10)</u><br>
+                Base 10 counting<br>
+                digits span from 0 - 9<br>
+                0   1   2   3   4   5   6   7   8   9 <br>
+                10 11 12 13 14 15 16 17 18 19 </b>
+                    <br><br>
+
+                    <b><u>Binary (Bi means 2) </u><br>
+                        Base 2 counting<br>
+                        digits span from 0 - 1 (each number is often called a 'bit'<br>
+                        0   1  <br>
+                        10 11  </b><br><br>
+
+                    <b><u>Hexadecimal (Hexa means 6) </u><br>
+                        Base 16 counting<br>
+                        digits span from 0 - F<br>
+                        0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F  <br>
+                        10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F </b>
+            
+
+                </div>
+                <br><br> As you can see, to count in binary we can just ignore numbers 2 and above. However, because we lose those numbers, we need to start counting in two digit pairs after the number 1 (in decimal, we only need to do that after the number 9)<br><br> Meanwhile in hexadecimal, instead of deleting numbers we need to create more. We can do that by using the letters A-F to represnt 10-15 using 1 character. Because we can use a single digit to hold a bigger number, we only need to begin using 2 digits after the number 15 (F).
+                <br><br>
+                <div style="padding-left:5%">
+                <b><u>This number in 3 different counting systems: X X X X X X X X X X X X X X X </u><br>
+                    15 (decimal)<br>
+                    1111 (binary)<br>
+                    F (hexidecimal)<br></b></div>
+                <br><br>
+                This is where the magic is - we can use 1 digit in hexadecimal to fully represent 4 bits in binary.<br><br>
+                Whenever the gameboy is reading memory or doing a command, everything is done in groups of 8 bits - this is the 'word' size (just like how in english units of language data are broken into words). 8-bit graphics take their name from this memory size! <br><br>
+                Therefore, 2 digits in hexadecimal can be used to write down any word in an 8-bit language - and the gameboy is 8-bit :) So to make data shorter and easier to read, programmers often use hexadecimal for their work.
+
+                <br><br>
+                So let's start breaking down that image into hexadecimal. First, we can break it into units of four (4 bits is called a nibble) :
+                
+                <img src="img/nibble_pokemon.png" class="pico8Image" alt="The previous grid of 0's and 1s, with groups of 4 pushed together."> 
+
+                Then, we simply replace each group of 4 bits with their corresponding letters:
+                <img src="img/hex_pokemon_raw.png" class="pico8Image" alt="The previous grid of groups of 4 0's and 1s, but each group is replaced by a hexadecimal letter"> 
+                    
+                And then, we group each 2 letters together to make the sprite encoding we saw before. (this represents 8 bits, and 8 bits -also called 2 nibbles - make a byte!) :
+                <img src="img/hex_sprite.png" class="pico8Image" alt="the first example of a grid of letters and numbers we saw before.">                
+                <br><br>
+            </div>
+
+
+
+    <b><a href="gameboytutorial.html" style="color: black; "><- Back to GameBoy Tutorials</a></b><br><br>    </div>
+</div>
+
+
+
+
+</html>

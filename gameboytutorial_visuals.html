@@ -4,10 +4,16 @@
 
 
 <h1 class="title"><a href="index.html" style="color: black; text-decoration: none; ">Halting Solution</a></h1>
+<div class="navigation">
+<div class="rightnavigation mono"><a href="gameboytutorial_sprite_encoding.html">Next lesson:<br>encoding of sprites --></a></div>
+</div>
+
+
     <div class ="container">
     <div class="content mono">
-            <h2>Main idea: Visuals</h2><br><br>
+            <h2>Main idea: Visuals</h2>
             <div style="padding-left:2%">
+                <h3>Introduction</h3><br><br>
                 In the gameboy, there are two important graphical elements - tiles, and sprites.<br>
                 <img src="img/tilemap.png" alt="an image of several squares, intending to show a group of tiles" class="pico8Image", style="display:inline-block"></img>
                 <img src="img/sprite1.png" alt="an image of a circle, intending to show a sprite", style="display:inline-block"></img>
@@ -17,8 +23,17 @@
                 <img src="img/sprites_with_tiles.png" class="pico8Image" alt="an image showing a series of background tiles, with a few circular sprites floating on top."><br><br>
                 The gameboy (using some strategies with memory we will discuss later) views a segment of the map and displays it on screen. The designer may choose to make the map bigger than the visual field of the gameboy screen, this can be used to create scrolling effects by slowly moving the perspective of the screen across the tilemap.<br>
                 <img src="img/gameboy_with_tiles.png" class="pico8Image" alt="an image showing a series of background tiles, with a few circular sprites floating on top. A gameboy floats above the whole scene, with the circles and tiles appearing onscreen as a unified picture. A cone representing the field of view of the gameboy shines down onto the tilemap, showing that one of the sprites and part of the tilemap is offscreen to the player and thus not seen.">
-            </div>
-
+                <br>
+                So how does the gameboy know what sprites and tiles to display on-screen? We plug in a cartridge, switch the power on, and magically everything comes into place. So how does that work? To answer that question, we'll need to explore a few different concepts - computer memory, and data encoding.<br><br>
+                Inside the gameboy, there are special electronic devices that store data by charging little components called transitors with electricity. If a transistor has electricity in it the computer thinks it has the value 'true', and if it's not charged it's 'false' (there is more complicated information behind this, and cases where the data is stored slightly differently, but this is a good basic example to hold in your mind.) All of the information for playing a game can be described using the values 'true' and 'false'.<br><br>
+                The gameboy then activates some electronics that reads all the transitors like words in a book. (From now on, we will call these transistors 'memory', and what's stored in them 'data'.)
+                <br>
+                <img src="img/gameboy_thinking.png" class="pico8Image" alt="an image of a gameboy, with a thought bubble showing a book with the title gameboy memory"><br><br>
+                All of the memory has addresses, similar to how all pages in a book have a page number. The gameboy will use data stored at different points in memory for different purposes. The data at one location for example will be used to know what sprites look like, and another location will have all of the information about which sprites are drawn, and where.
+                <br>
+                <img src="img/inside_book.png" class="pico8Image" alt="an image of an open book, with the pages 24 and 25 visible. On page 24 is the text 'what the sprites look like' and page 25 is the text 'Which sprites are on the screen and where they are'"><br><br>
+                In the next section, we will talk about <a href="gameboytutorial_sprite_encoding.html">encoding of sprites</a>, which describes how information about how sprites are drawn can be written into memory.
+                <br><br>
 
 
     <b><a href="gameboytutorial.html" style="color: black; "><- Back to GameBoy Tutorials</a></b><br><br>    </div>

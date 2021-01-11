@@ -139,7 +139,8 @@ canvas{
 	display:flex;
     align-items:stretch;
     justify-content:space-between;
-    width:100%;
+	width:100%;
+	height:5%;
     margin:0;
     padding:0;
 }
@@ -165,11 +166,26 @@ canvas{
 
 .rightImage{
 	float: right; 
+	text-align:right;
 	width:20%;
 	margin-top:10%;
 	height:100%;
 }
-
+.navigation{
+	width:100%;
+	padding-bottom:2%;
+}
+.rightnavigation{
+	float: right; 
+	text-align:right;
+	margin-right:0%;
+	margin-top:0%;
+}
+.leftnavigation{
+	float: left; 
+	text-align:left;
+	margin-left:0%;
+}
 .pico8Image{
 	display: block;
 	margin-left: auto;
