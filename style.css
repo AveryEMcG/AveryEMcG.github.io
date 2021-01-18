@@ -198,12 +198,12 @@ canvas{
 }	
 .essayPictureContainerLeft{
 	float:left;
-	width:50%;
+	width:30%;
 	padding-right:1%;
 }
 .essayPictureContainerRight{
 	float:right;
-	width:50%;
+	width:30%;
 	padding-left:1%;
 }
 .essayPictureContainerDouble{
