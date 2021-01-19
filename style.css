@@ -196,6 +196,12 @@ canvas{
 .essayPictureDouble{
 	width:50%;
 }	
+.essayPictureTriple{
+	width:30%;
+}	
+
+
+
 .essayPictureContainerLeft{
 	float:left;
 	width:30%;
@@ -260,6 +266,9 @@ and (max-device-width: 51em) {
 		-webkit-text-size-adjust: 100%;
 	}
 	.essayPictureDouble{
+		width:100%;
+	}	
+	.essayPictureTriple{
 		width:100%;
 	}	
 	.title

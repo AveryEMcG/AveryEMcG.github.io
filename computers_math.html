@@ -1,0 +1,175 @@
+<html>
+<link rel="stylesheet" href="style.css">
+<title>Halting Solution</title>
+
+
+<h1 class="title"><a href="index.html" style="color: black; text-decoration: none; ">Halting Solution</a></h1>
+
+
+<div class="container">
+
+    <div class="content mono">
+
+
+        <h2>How can computers do math?</h2>
+        Computers aren't thinking machines - there is no magic in the binary, they're just dense piles of simple
+        electronic components. In this section we'll look at how computers perform simple math equations as a way to
+        explore this concept.
+        <br><br>
+
+
+        <h3>Logic Gates</h3>
+        Inside of a computer's CPU, there is a special component called an Arithmatic Logic Unit (ALU). The ALU's job is
+        to take a series of electrical signals through some wires, and then produce a corresponding output on other
+        wires. The input electricity represents binary numbers and the math operation to be performed, and the output is
+        the result of that operation. Rather than being monolithic, ALU's are composed of smaller electronic units wired
+        together, each expertly performing a specific operation. One such building block is known as a logic
+        gate.<br><br>
+
+
+
+
+
+        Logic gates take several wires (holding a high or low signal to represent a 0 or 1), and produce a simple output
+        based on the input. Let's look at three common ones:
+        <ul>
+            <li><b>AND</b> gates will only produce a high power reading if both inputs are also high (both one AND The
+                other, hence the name.) </li>
+
+            <li>An <b>OR</b> gate will take two wires, and if either one OR the other has a high power it will produce a
+                high on the output.</li>
+            <li>Finally, a <b>XOR</b> gate will be high if (and only if) ONLY one of the input wires is high.</li>
+        </ul>
+        <div class="essayPictureDouble" style="width:100%">
+            <img src="img/AND_block.png" class="essayPictureTriple"
+                alt="an image of an ADD block, showing two inputs and an output, and listing the logic of the block already described above.">
+            <img src="img/OR_block.png" class="essayPictureTriple"
+            alt="an image of an OR block, showing two inputs and an output, and listing the logic of the block already described above.">
+            <img src="img/XOR_block.png" class="essayPictureTriple"
+            alt="an image of a XOR block, showing two inputs and an output, and listing the logic of the block already described above.">
+        </div>
+
+        <br><br> The wiring behind these blocks is dead simple - just a matter of some thought and attention. For
+        example, we can create an AND gate using two switches and a battery. When both inputs to the gate are high, both
+        electronically triggered switches close, and the power is able to flow from the battery through to the output.
+        <div class="essayPictureContainerRight">
+            <img src="img/and_gate.png" style="width:100%"
+                alt="Another image of an and gate, this one showing two switches inside which connect or disconnect a power source from the output, and those switches are connected to the inputs.">
+            </div>
+
+        <br><br>This is all well and good, but what does this have to do with math? To answer that, we'll need to use
+        these gates as building blocks for something slightly more complicated. We also need to remember how binary
+        numbers differ from our every-day base 10 decimal numbers:<br><br>
+        <div style="padding-left:5%">
+            <b><u>Decimal (Deca means 10)</u><br>
+                Base 10 counting<br>
+                digits span from 0 - 9<br>
+                0 1 2 3 4 5 6 7 8 9 <br>
+                10 11 12 13 14 15 16 17 18 19 </b>
+            <br><br>
+
+            <b><u>Binary (Bi means 2) </u><br>
+                Base 2 counting<br>
+                digits span from 0 - 1 (each number is often called a 'bit'<br>
+                0 1 <br>
+                10 11 </b><br><br>
+        </div>
+
+
+        <br><br>
+        As we can see, any of our every day numbers can be represented in binary using 0's and 1's. The strategy here is
+        that we will strip off those numbers one by one and pass them through a series of carefully chosen logic gates.
+        This strategy is just like what we learned in our childhood math classes - look at the numbers one by one, and
+        then merge the results all together at the end.
+        <div class="essayPictureContainerDouble">
+
+            <div class="essayPictureDouble">
+                <div style="bottom:0%">
+                    <img src="img/decimal_math.png"
+                        alt="An image of 15 and 8 being added together, remainders being put on top of the equation."
+                        style="width:100%">
+                    <div style="text-align:center;bottom:0%;">
+                        <i>In our math problems, we perform the operation (in this case adding) on the numbers one by
+                            one, and carry the result to the next place on top as needed.</i>
+                    </div>
+                </div>
+            </div>
+            <div class="essayPictureDouble">
+                <img src="img/binary_math.png" style="width:100%"
+                    alt="An image of 11 and 01 being added together, remainders being put on top of the equation.">
+                <div style="text-align:center">
+                    <i>In binary it's exactly the same. We perform the operation, and carry the remainder. It's just a
+                        bit more boring, because we are using only zeroes and ones.</i>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+        <h3>Building an Adder</h3>
+
+        Let's start putting together one of these specialized components in the ALU. Addition is the simplest, so it's a good place for us to start. First, we need to make something called a "half adder". Like the name suggestes, a half-adder is half of what we need to make an adding machine out of logic gates. 
+
+        <br><br><i>Remember: we will look at each digit - a 0 or 1 - in our binary numbers one by one. We will be broadcasting high power on a wire to represent 1's, and low power to represent 0's.</i>
+        <br><br> To make our half adder, we need 4 parts:
+        <ul>
+            <li>A wire representing the first digit in the <b>first</b> number to be added. Labeled here as Number A.</li>
+            <li>A wire representing the first digit in the <b>second</b> number to be added. Labeled here as Number B.</li>
+            <li>a XOR gate</li>
+            <li>an AND gate</li>
+        </ul>
+        <div class="essayPictureContainerDouble">
+            <img src="img/half_adder.png" 
+                alt="an image of a half adder, where a XOR and AND block are wired together.">
+        </div>
+        <br><br>
+        <div class="essayPictureContainerleft">
+            <img src="img/xor_and_math.png" style="width:100%"
+                alt="A repeat of the image showing binary addition, with the remainder circled with the note 'and does this', and the result circled with the note 'XOR does this'.">
+        </div>
+The XOR gate handles the situation where we are performing 1+0, or 0+1 - it will return 1 if that's the case. If both are 0, or 1, it will output 0. Meanwhile The AND gate figures out if we are adding two of the same number, so 0+0 or 1+1 - It will output 1 if that's the case.<br><br>
+        If we look back up to our example of hand-calculating addition. We can see that the XOR will give us a 1 or a 0 to put at the bottom of the equation, and the AND figures out if we need to put a 1 on top of the equation as a remainder (also known as a carry). 
+        <br><br>
+        That may solve adding one set of digits, but how do we add more? Remember, computers are just stacks of simple electronic components - so lets start with our half-adder and build it up.
+        <br><br>
+        Our half-adder doesn't have an input wire for the remainder/carry on top of the equation, so let's start by adding that, (we'll do something with it later down the pipeline.)
+        <br><br>
+        <div class="essayPictureContainerDouble">
+            <img src="img/half_adder_with_carry.png"
+                alt="A half adder, now with a line saying 'carry' passing through as an unused input">
+        </div> 
+        Next, we will stick another half adder on top. This will add the remainder to the sum of the two numbers we handled with the first half-adder.
+        <div class="essayPictureContainerDouble">
+            <img src="img/two_half_adders.png"
+                alt="two half adders linked together, with the carry from before being wired into the second half adder.">
+        </div> 
+        Finally, we add an OR at the end to generate the proper carry operation - it will generate a 1 if there was a remainder from adding our previous carry, or if there was a remainder from our two new numbers being added together.
+
+        <br><br>
+        <div class="essayPictureContainerDouble">
+            <img src="img/full_adder.png" style="width:100%"
+                alt="an image of a full adder">
+        </div>
+        <br><br>Now we have our full-adder! It can add two numbers and include a remainder from a previous calculation... How is that helpful? Once again, we just need to continue piling things on. If we link a half adder with some full adders, we can finally start adding real multi-digit numbers!
+        <div class="essayPictureContainerDouble">
+            <img src="img/linked_adders.png" style="width:100%"
+                alt="An image of a half adder connected to two full adders, showing the addition of 010 and 111. The result is displayed at the bottom. At the end of the chain is a carry of 1, and a warning sign indicating caution.">
+        </div>  
+        <br><br>As we can see, we need an adder for each digit in our number. But notice! We have a warning at the end of our chain - we carried out a digit and didn't add it to the end of our number. What's that about?<br><br>
+        In all computers, numbers have a maximum size. For older computers this is 32 (and even older or simpler computers were smaller - gameboys for example were only 8!) and newer computers this is 64. This is why you see terms like 32bit or x64 on computers (or 8-bit mentioned for retro-looking art), it's referring to the maximum size of numbers. (This is also why newer programs can't run on older computers - among a few other things, there just aren't enough adders in their ALUs!)
+        <br><br>
+        When we run into this issue, we call it an 'integer overflow'. We had too many bits and they came spraying out of the end of our adder chain. Programmers who work with the deepest parts of computers will often check if there is a 1 in ALUs trash after a math operation, and then perform some careful work to recover their math.
+        <h3>In Conclusion</h3>
+        Computers stack circuits together to make electricity behave a certain way. When we make our electricity look like two binary numbers on one side of a stack of electronics, the other side will broadcast some electricity that looks like the result of a math operation. There's no magic, just a ridiculous amount of simple steps carefully strung together.<br><br>
+        The rest of the computer is the same. For every mysterious behavior, there is another sky-high pile of electronics. This is why computers drive towards smaller and smaller chips - as our piles grow bigger it takes longer for the electricity to pass all the way through them. By making the stack smaller we can reduce the time, and therefore make our computers run faster.<br><br>
+        When computers were simpler, people were familiar with the entire stack - all the way down to the wires. However as these strings of electronics have grown longer and longer, engineers have specialized and focused on just one part of the chain. Nowadays, people who write computer software software swim across the surface of computers hardly knowing these electronics at all. <br><br>In our next section we will explore how software became decoupled from electronics - which was the result of the advent of compilers and interpreters.
+        <br><br>
+
+        <b><a href="Computers.html" style="color: black; ">
+                <- Back to How Do Computers Work </a></b><br><br>
+    </div>
+</div>
+
+
+
+
+</html>
