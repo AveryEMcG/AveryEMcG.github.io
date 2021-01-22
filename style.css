@@ -25,16 +25,37 @@ hr {
 	left: 10px;
 	width: 100%;
 	margin-top:0%;
-	height:1.75em;
+	height:5%;
 	border-bottom: 5px solid black;
+	z-index: 2;
 }
-
+.navpanel{
+	font-size: 1.5em;
+	z-index: 0;
+	position:fixed;
+	font-family: monospace;
+	background-color:grey;
+	top: 2em;
+	left: 10px;
+	width: 100%;
+	margin-top:0%;
+	height:2em;
+}
 .container {
 	margin-top:5em;
 	width: 80%;
 }
-
-
+a {
+	color: black;
+}
+.greyBox{
+	display:flex; 
+	background-color:grey; 
+	width:100%;
+	justify-content: space-around; 
+	align-items:center;
+	font-size:2em;
+}
 
 .content {
 	margin-left: 5%;
@@ -51,6 +72,7 @@ hr {
 	text-align: center;
 	font-family: monospace;
 }
+
 
 
 canvas#canvas {}
@@ -279,6 +301,18 @@ and (max-device-width: 51em) {
 		width: 100%;
 		margin-top:0%;
 		height:1.75em;
+	}
+	.navpanel{
+		font-size: 2.5em;
+		z-index: 0;
+		position:fixed;
+		font-family: monospace;
+		background-color:grey;
+		top: 2em;
+		left: 10px;
+		width: 100%;
+		margin-top:0%;
+		height:1.5em;
 	}
 
 }
