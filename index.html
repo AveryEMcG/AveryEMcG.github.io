@@ -1,85 +1,118 @@
 <html>
+<head>
 <link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+    $('#pico8').click(function(){window.location.href = "pico8.html"});
+    $('#webdev').click(function(){window.location.href = "webdev.html"});
+    $('#computers').click(function(){window.location.href = "computers.html"});
+    $('#gameboy').click(function(){window.location.href = "gameboytutorial.html"});
+    $('#teaching').click(function(){window.location.href = "teaching.html"});
+
+
+
+
+
+
+});
+</script>
+</head>
 <title>Halting Solution</title>
 
 
 <h1 class="title"><a href="index.html" style="color: black; text-decoration: none; ">Halting Solution</a></h1>
 <div class="container">
     <div class="content mono">
-        <h2> About </h2>
-        <i>Why the name?</i><br><br>
-        <div style="padding-left:2%">
-            The <a href="https://en.wikipedia.org/wiki/Halting_problem">Halting Problem</a> is one of the fundamental
-            unsolved problems in theoretical computer science.
-            In basic terms, the problem analyzes how one could prove whether or not a program will eventually finish
-            running, or is trapped in an infinite cycle somewhere.
-            I don't pretend to know the halting solution, but I really like it as a moniker.
+        <div style="display:flex; flex-wrap: wrap; justify-content: space-between;">
+            <div class="greyBox" id="pico8">
+                <div class="frontPageBox">
+                    <a style="text-decoration: none;" href="pico8.html">
+
+                        Pico-8 Game Dev
+                    </a>
+                </div>
+                <div class="frontPageBox">
+                    <a style="text-decoration: none;" href="pico8.html">
+
+                        <img src="bubs.gif" style="width:100%">
+                    </a>
+                </div>
+                </a>
+            </div>
+
+            <br>
+
+            <div class="greyBox" id="webdev">
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="webdev.html">
+
+                        Web Development
+                    </a>
+                </div>
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="webdev.html">
+                        <img src="nychelp.gif" style="width:100%">
+                    </a>
+                </div>
+                </a>
+            </div>
+
+
+            <br>
+
+            <div class="greyBox" id="teaching">
+
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="teaching.html">
+                        Community Workshops
+                    </a>
+                </div>
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="teaching.html">
+                        <img src="playdohrobot.jpg" style="width:100%">
+                    </a>
+                </div>
+                </a>
+            </div>
+
+
+            <div class="greyBox" id="gameboy">
+
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="gameboytutorial.html">
+                        Gameboy Development
+                    </a>
+                </div>
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="gameboytutorial.html">
+                        <img src="img/gameboy.png " style="width:100%">
+                    </a>
+
+                </div>
+                </a>
+            </div>
+
+            <div class="greyBox" id="computers">
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="computers.html">
+
+                        How do Computers Work?
+                    </a>
+                </div>
+                <div class="frontPageBox">
+                     <a style="text-decoration: none;" href="computers.html">
+
+                        <img src="img/half_adder.png" style="width:100%">
+                    </a>
+                </div>
+
+            </div>
+
         </div>
-        <br><br><i>Why is this site so empty looking?</i><br><br>
-        <div style="padding-left:2%">
-            I avoid using fancy formatting on my pages, because it becomes <a
-                href="https://www.w3.org/standards/webdesign/accessibility">less accessible</a>,
-            especially for people who use screenreaders when accessing the internet.
-        </div><br>
-        <h2> Projects & Demos </h2>
-        <a href="pico8.html" style="text-decoration:none;">
-
-            <div class="greyBox">
-                <div style="padding:2%; width:50%">
-                    Pico-8 Game Dev
-                </div>
-                <div style="padding:2%; width:50%">
-                    <img src="bubs.gif" style="width:100%">
-                </div>
-            </div>
-        </a>
-        <br>
-        <a href="webdev.html" style="text-decoration:none;">
-
-            <div class="greyBox">
-                <div style="padding:2%; width:50%">                
-                Web Development
-            </div>
-            <div style="padding:2%; width:50%">
-                <img src="nychelp.gif" style="width:100%">
-            </div>
     </div>
-    </a>
-    <br>
-    <a href="teaching.html" style="text-decoration:none;">
-        <div class="greyBox">
-            <div style="padding:2%; width:50%">
-                Community Workshops
-            </div>
-            <div style="padding:2%; width:50%">
-                <img src="playdohrobot.jpg" style="width:100%">
-            </div>
-        </div>
-        <br>
-        <a href="gameboytutorial.html" style="text-decoration:none;">
-            <div class="greyBox">
-                <div style="padding:2%; width:50%">
-                    Gameboy Development
-                </div>
-                <div style="padding:2%; width:50%">
-                    <img src="img/gameboy.png " style="width:100%">
-                </div>
-            </div>
-        </a>
-        <br>
-        <a href="Computers.html" style="text-decoration:none;">
-            <div class="greyBox">
-                <div style="padding:2%; width:50%">
-                    How do Computers Work?
-                </div>
-                <div style="padding:2%; width:50%" >
-                    <img src="img/half_adder.png"style="width:100%">
-                </div>
-
-            </div>
-        </a>
-
-</div>
 </div>
 
 </html>

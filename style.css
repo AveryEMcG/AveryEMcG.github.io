@@ -39,10 +39,14 @@ hr {
 	left: 10px;
 	width: 100%;
 	margin-top:0%;
+
 	height:2em;
+	display:flex;
 }
+
+
 .container {
-	margin-top:5em;
+	margin-top:6em;
 	width: 80%;
 }
 a {
@@ -50,13 +54,24 @@ a {
 }
 .greyBox{
 	display:flex; 
-	background-color:grey; 
-	width:100%;
+	background-color:#cfcfcf;; 
+	width:48%;
 	justify-content: space-around; 
 	align-items:center;
 	font-size:2em;
+	margin:1%;
+
+}
+.greyBox:hover{
+
+	background-color:grey;
 }
 
+.frontPageBox
+{
+	 padding:2%;
+	 width:50%;
+}
 .content {
 	margin-left: 5%;
 	/*margin-right: 10%;*/
@@ -251,7 +266,7 @@ canvas{
 @media only screen 
 and (max-device-width: 51em) {
 	.container {
-		margin-top:3em;
+		margin-top:4em;
 		margin-left: 2em;
 		margin-right: 2em;
 		width: auto;
@@ -314,5 +329,18 @@ and (max-device-width: 51em) {
 		margin-top:0%;
 		height:1.5em;
 	}
+
+	.greyBox{
+		width:90%;
+	}
+
+	.frontPageBox
+	{
+		width:50%;
+		padding:2%;
+		font-size:.8em;
+
+	}
+
 
 }
