@@ -44,6 +44,14 @@ hr {
 	display:flex;
 }
 
+.navElement{
+	flex-grow:1; 
+	margin-right:10px; 
+	margin-bottom:1px; 
+	align-self:flex-end;
+	width:33%;
+}
+
 
 .container {
 	margin-top:6em;
