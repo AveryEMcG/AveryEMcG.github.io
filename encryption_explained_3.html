@@ -7,7 +7,7 @@
 <div class="navPanel">
     <div class="navElement" style="text-align:left;">
         <b>
-            <a href="encryption_explained_1.html">
+            <a href="encryption_explained_2.html">
                 <-- Previous</a> </b>  
     </div>
     <div class="navElement" style="text-align:center;">
@@ -23,7 +23,7 @@
 <div class="container">
     <div class="content mono">
         <h2>Introduction - Encrypted Apps & Tools</h2>
-        In the <a href="encryption_explained_1.html">prior article</a>, we talked about how encryption can be used to
+        In the <a href="encryption_explained_2.html">prior article</a>, we talked about how encryption can be used to
         protect our privacy online. In this article we will focus on consumer applications which provide encrypted
         communications.<br><br>
         <i>Please note: This was written in late 2020. Things may have changed since then.</i>
@@ -34,9 +34,9 @@
         <table>
             <tr>
                 <th></th>
-                <th>Signal</th>
-                <th>WhatsApp</th>
-                <th>Telegram</th>
+                <th><a href="https://www.signal.org/"><img src="img/signal.png" style="width:20%"><br> Signal</a></th>
+                <th><a href="https://www.whatsapp.com/"><img src="img/whatsapp.jpg" style="width:20%"><br>WhatsApp</a></th>
+                <th><a href="https://telegram.org/"><img src="img/telegram.jpg" style="width:20%"><br>Telegram</a></th>
             </tr>
             <tr>
                 <td><b>Owned By</b></td>
@@ -72,7 +72,8 @@
         <br><br>
 
         Based on the points highlighted above, an ideal smartphone app would include these privacy features:
-        <div style="padding-left:5%">
+       
+        <div style="padding-left:5%; border: 1px solid rgb(211, 197, 197);">
             <br>
             <b>End to End Encryption:</b> messages encrypted before sending, and only decrypted by the recipient. <br>
             <br>
@@ -90,7 +91,8 @@
             messages.<br><br>
 
         </div>
-
+        <br><br>
+        Let's see how the apps stack up with those privacy features are in mind:<br>
         <table style="width:100%">
             <tr>
                 <th></th>
@@ -155,30 +157,49 @@
         </table>
         <br><br>
 
-        As we can see, Signal is by far the strongest option for secure and private communication. The worst option of the three is telegram (largely because it relies on private cryptographic methods not made public - and thus utilizes a level of security through obscurity). Signal is well regarded due to its use of the “double ratchet” protocol - which triggers continuous Diffie-Hellman key transfers such that past and future messages in a conversations cannot be decrypted even if a key is somehow compromised, and sequential messages can continuously use new keys (via a ‘ratchet’) if the other party is unavailable for key transfer.
+        As we can see, Signal is by far the strongest option for secure and private communication. The worst option of the three is telegram (largely because it relies on private cryptographic methods not made public - and thus utilizes a level of security through obscurity). Signal is well regarded due to its use of the “double ratchet” protocol - which triggers continuous Diffie-Hellman key transfers such that past and future messages in a conversations cannot be decrypted even if a key is somehow compromised, and sequential messages can continuously use new keys (via a ‘ratchet’) if the other party is unavailable for key transfer. (For more information about this protocol, check out <a href="signal.html">this article</a> I wrote about it!)
 <br><br>
-Regardless of the methods chosen for communication, some vulnerabilities are still difficult to avoid through the use of a cellphone. A phone number is paired with a phone upon registration with a network. Under normal operation, a cellphone will be communicating with nearby base stations to maintain a steady signal. That associates a phone number with a geographic location (and if the user fails to use a crypto messaging app, may also make any messages sent by that number readable to observers, and further tied to that location). If the user purchased and registered their phone using their name and credit card - such as through a phone plan - all of that information is linked to their identity.
+Regardless of the methods chosen for communication, some vulnerabilities are still difficult to avoid through the use of a cellphone. A phone number is paired with a phone upon registration with a network. Under normal operation, a cellphone will be communicating with nearby base stations to maintain a steady signal. <a href="https://en.wikipedia.org/wiki/Cellphone_surveillance#Tower_dumps">That associates a phone number with a geographic location</a> (and if the user fails to use a crypto messaging app, may also make any messages sent by that number <a href="https://en.wikipedia.org/wiki/Cellphone_surveillance#Stingray_devices">readable to observers</a>, and further tied to that location). If the user purchased and registered their phone using their name and credit card - such as through a phone plan - all of that information is linked to their identity.
 <br><br>
 This means that although a cryptographic messaging app do provide a level of protection, it is not a catch-all for complete security in mobile environments. All people should know that if they are using a cellphone, they are associating that device with a location (assuming they are accessing the cell network) and perhaps to their real identity, even if the specifics of their message may be hidden.
 <br><br>
 <h2>E-mail Privacy - Protonmail</h2>
 E-mail is one of the less secure mechanisms of communication. For example, g-mail does not enable E2EE, and thus anyone who encounters or records your e-mail en-route may be able to read it. Unfortunately as e-mail is a communicator of important and potentially sensitive information this is quite concerning.<br><br>
-	Luckily, Protonmail is one of many providers which uses encryption for e-mail communication. When sending e-mails to another Protonmail user, the message is first encrypted and signed client-side prior to the transmission, and only decrypted and made readable by the recipient. This is the ideal scenario, as it provides the benefits of encryption with the authenticity signatures available to asymmetric encryption.<br><br>
+<div class="essayPictureContainerLeft" style=" margin-bottom:1%;">
+    <img src="img/protonmail.jpg"
+        alt="logo of protonmail"
+        style="width:100%;">
+
+</div>
+	Luckily, <a href="https://protonmail.com">Protonmail</a> is one of many providers which uses <a href="https://protonmail.com/security-details"> encryption for e-mail communication</a>. When sending e-mails to another Protonmail user, the message is first encrypted and signed client-side prior to the transmission, and only decrypted and made readable by the recipient. This is the ideal scenario, as it provides the benefits of encryption with the authenticity signatures available to asymmetric encryption.<br><br>
 	When sending to a non-Protonmail mailbox, the user may still enable E2EE but instead of using public key encryption, the service accepts a password which may be used to both encrypt and decrypt the message (and thus must be shared to the recipient through an alternative secure channel, such as an in person meeting). <br><br>
 	Finally, the entire mailbox is encrypted with the user’s password. Upon password reset, a new key is generated and all old messages are rendered unreadable (as they remain encrypted, and thus indistinguishable from random noise). This means that even if the account becomes compromised through a password reset, old messages remain secure.
     <h2>Desktop Crypto - TOR, Tails, and VPNs</h2>
 
-    If we wish to not only have our specific queries, but also who we are directing them towards to remain hidden, we must utilize onion routing. ‘The Onion Router’ or ‘Tor’ for short, is a simple user-friendly browser which conducts its access through onions. It also has extensive built-in features to hide additional user information often collected by websites through browsers.<br><br>
-	If one wants to further conceal their activity online, a virtual private network (VPN) can be layered on top of Tor (or used alone) for greater privacy. Virtual private networks) are channels that a user can direct their internet queries to rather than communicating with their internet service provider. This third party network can issue and receive packets on behalf of the user, which helps to hide who is requesting data from a server. When used in conjunction with Tor, a VPN can hide a user from the entry node on an onion circuit - which is the point at which a senders’ identity can be compromised - though the privacy provided by a VPN will always depend upon their own trustworthiness and security. <br><br>
-	However, for the greatest digital security there is nothing which approaches the confidence afforded by the Tails operating system. The OS is installed on and operates from a USB stick, saving no information to the desktop it plugs into. The installation procedure for creating this USB also requires steps for verification of the publisher through RSA keys- making it quite clear that the operating system is legitimate and has not been compromised by a nefarious third party.<br><br>
+    If we wish to not only have our specific queries, but also who we are directing them towards to remain hidden, we must utilize onion routing. ‘The Onion Router Browser’  or ‘TOR Browser’ for short (sometimes further shortened to just "TOR", despite TOR being a protocol, not an application) <a href="https://www.torproject.org/">is a simple user-friendly browser</a> which conducts its access through onions. <a href="https://2019.www.torproject.org/projects/torbrowser/design/">It also has extensive built-in features</a> to hide additional user information often collected by websites through browsers.<br><br>
+    <div class="essayPictureContainerRight" style=" margin-bottom:1%;">
+        <img src="img/tor.png"
+            alt=" logo of TOR"
+            style="width:100%;">
+    
+    </div>
+	If one wants to further conceal their activity online, <a href="https://riseup.net/en/vpn">a virtual private network (VPN)</a> can be layered on top of the Tor browser (or used alone) for greater privacy. Virtual private networks) are channels that a user can direct their internet queries to rather than communicating with their internet service provider. This third party network can issue and receive packets on behalf of the user, which helps to hide who is requesting data from a server. When used in conjunction with Tor, a VPN can hide a user from the entry node on an onion circuit - which is the point at which a senders’ identity can be compromised - though the privacy provided by a VPN will always depend upon their own trustworthiness and security. <br><br>
+ 
+	However, for the greatest digital security there is nothing which approaches the confidence afforded by the <a href="https://tails.boum.org/">Tails operating system</a>. The OS is installed on and operates from a USB stick, saving no information to the desktop it plugs into. The installation procedure for creating this USB also requires steps for verification of the publisher through RSA keys- making it quite clear that the operating system is legitimate and has not been compromised by a nefarious third party.<br><br>
+    <div class="essayPictureContainerLeft" style=" margin-bottom:1%;">
+        <img src="img/tails.png"
+            alt="Logo of Tails"
+            style="width:100%;">
+    
+    </div>
 	During shutdown, or If the Tails USB stick is removed from a computer prior to it powering down, random data will be written to RAM - protecting against surveillance attempts on computer memory. Moreover, no data is stored to the USB drive itself except when explicitly told by the user, and that data is encrypted and locked when not in commanded to be in use. <br><br>
 	All network traffic in Tails is passed through Tor (though a small browser is available specifically for certain conditions where Tor is not available, such as logging into public wifi systems), and due to the lack of persistent memory no session data is stored to the disk. <br><br>
-	Tails has been labeled by the NSA as being a catastrophic threat to its surveillance efforts. Users of this platform are nearly impossible to be surveilled if they also follow other good security practices online - such as not entering their private information in online forms, or otherwise providing contiguous blocks of usage which lead to assumptions about their identity.
+	Tails has been labeled by the NSA as being a <a href="https://www.spiegel.de/international/germany/inside-the-nsa-s-war-on-internet-security-a-1010361.html">catastrophic threat</a> to its surveillance efforts. Users of this platform are nearly impossible to be surveilled if they also follow other good security practices online - such as not entering their private information in online forms, or otherwise providing contiguous blocks of usage which lead to assumptions about their identity.
         <br><br>
 <h2>Conclusion</h2>
 We all have access to a multitude of tools which can preserve our privacy, but to use them we must knowingly choose platforms which center cryptographic paradigms. We also need to consider the tradeoffs of each method.
 <br><br>
-Of these methods, the following have reasonable levels of security: 
+Of these methods, the following meet my own personal thresholds for security:
 <div style="padding-left:5%">
     <br>
     <b>Cellphones:</b> Signal Messaging App <br>

@@ -34,7 +34,8 @@ hr {
 	z-index: 0;
 	position:fixed;
 	font-family: monospace;
-	background-color:grey;
+	background-color:dimgrey;
+	color:snow;
 	top: 2em;
 	left: 10px;
 	width: 100%;
@@ -42,6 +43,9 @@ hr {
 
 	height:2em;
 	display:flex;
+}
+.navpanel a{
+	color:lightgray;
 }
 
 .navElement{
@@ -52,13 +56,18 @@ hr {
 	width:33%;
 }
 
-
+h2 {
+ width:100%;
+ color:lightgray;
+ background-color: dimgrey;
+}
 .container {
 	margin-top:6em;
 	width: 80%;
 }
 a {
 	color: black;
+	font-weight: bold;
 }
 table { 
 
