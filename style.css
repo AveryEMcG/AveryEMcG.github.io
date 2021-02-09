@@ -60,6 +60,14 @@ hr {
 a {
 	color: black;
 }
+table { 
+
+	border: 1px solid rgb(211, 197, 197);
+} 
+  
+tr:nth-child(even) { 
+	background-color: cfcfcf; 
+} 
 .greyBox{
 	display:flex; 
 	background-color:#cfcfcf;; 
